@@ -1,4 +1,4 @@
-export const httpConstants = {
+const httpConstants = {
   METHOD_TYPE: {
     POST: 'POST',
     GET: 'GET',
@@ -37,32 +37,32 @@ export const httpConstants = {
   },
 }
 
-export const stringConstants = {
+const stringConstants = {
   SERVICE_STATUS_HTML:
     '<body style="font-family: Helvetica !important; background-color: black">' +
     '<div style="display: flex; flex:1; height: 100% ; justify-content: center; align-items: center; min-height: 100vh !important; font-size: 24px !important; color: #605DFF !important;">' +
     '⚡  Basic  🔋 Node-Project-Structure is working fine</div></body>'
 }
 
-export const genericConstants = {
+const genericConstants = {
   DEVICE_TYPE: {}
 }
 
-export const apiSuccessMessage = {
+const apiSuccessMessage = {
   FETCH_SUCCESS: 'Information fetched successfully',
   FOLLOW_SUCCESS : "Follow success",
   UNFOLLOW_SUCCESS: "Unfollow success",
   CHANGE_PASSWORD_SUCCESS: "Password changed Successfully"
 }
 
-export const apiEndpoints = {
+const apiEndpoints = {
   GET_METERS: '/get-meters',
   AUTH0_OAUTH_TOKEN: "oauth/token",
   AUTH0_USER_BY_EMAIL: "api/v2/users-by-email?email=",
   AUTH0_USER_BY_ID: "api/v2/users/",
 }
 
-export const apiFailureMessage = {
+const apiFailureMessage = {
   INVALID_PARAMS: 'Invalid Parameters',
   INVALID_REQUEST: 'Invalid Request',
   INVALID_SESSION_TOKEN: 'Invalid session token',
@@ -76,7 +76,7 @@ export const apiFailureMessage = {
   ID_REQUIRED: "User id is required field",
   AUTHENTICATION_ERROR: "Authentication Error"
 }
-export const NOTIFICATION_EVENTS = {
+const NOTIFICATION_EVENTS = {
   CREATE_PROFILE: 'create-profile-notification',
   UPDATE_PROFILE: 'update-profile-notification',
   RATE_PARTY: 'rate-party-notification',
@@ -84,7 +84,7 @@ export const NOTIFICATION_EVENTS = {
   UNFOLLOW: 'unfollow-notification',
 
 }
-export const constants = {
+const constants = {
   AMQP: {
     EXCHANGE_TYPE: {
       FANOUT: 'fanout',
@@ -117,3 +117,11 @@ export const constants = {
     }
   }
 }
+
+module.exports.httpConstants = httpConstants;
+module.exports.constants = constants;
+module.exports.apiFailureMessage = apiFailureMessage;
+module.exports.apiEndpoints = apiEndpoints;
+module.exports.apiSuccessMessage = apiSuccessMessage;
+module.exports.genericConstants = genericConstants;
+module.exports.stringConstants = stringConstants;

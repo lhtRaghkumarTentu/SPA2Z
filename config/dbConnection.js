@@ -1,7 +1,7 @@
-import Config from '.'
-import mongoose from 'mongoose'
+const Config = require('.')
+const mongoose = require('mongoose')
 
-export default class DBConnection {
+module.exports = class DBConnection {
   static connect () {
     console.log('DB trying to connect on ' + new Date() + ' to url' + Config.DB)
 
@@ -15,3 +15,4 @@ export default class DBConnection {
     return mongoose.connect(Config.DB, options)
   }
 }
+

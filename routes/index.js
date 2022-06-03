@@ -1,5 +1,5 @@
-import { stringConstants } from "../app/common/constants";
-import sampleModule from '../app/modules/sampleModule';
+const constants = require("../app/common/constants");
+const sampleModule = require('../app/modules/sampleModule');
 
 
 module.exports = (app) => {

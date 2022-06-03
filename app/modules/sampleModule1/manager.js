@@ -1,8 +1,7 @@
-import { httpConstants } from '../../common/constants';
-import SampleModel from '../../models/smapleModel';
-import Utils from '../../utils';
+const SampleModel = require('../../models/smapleModel');
+const Utils = require('../../utils');
 
-export default class Manager {
+module.exports = class Manager {
     createsample = async (reqData) =>{
         const sampleObject = new SampleModel(reqData);
         await sampleObject.save();

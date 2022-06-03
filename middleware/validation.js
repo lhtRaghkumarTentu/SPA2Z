@@ -1,5 +1,5 @@
-import Utils from '../app/utils'
-import * as yup from 'yup'
+const Utils = require('../app/utils')
+const yup = require("yup")
 
 module.exports = {
 

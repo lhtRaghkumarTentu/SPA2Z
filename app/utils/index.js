@@ -1,7 +1,7 @@
 'use strict'
-import { apiFailureMessage, httpConstants } from '../common/constants'
+const constants = require('../common/constants');
 
-export default class Utils {
+module.exports = class Utils {
   static response (res, data, message, success, code) {
     const responseObj = {
       responseData: data,
@@ -33,9 +33,9 @@ export default class Utils {
   static handleError (err, req, res) {
     if (!res) { return false }
     err = err || {}
-    const msg = err.message ? err.message : apiFailureMessage.INTERNAL_SERVER_ERROR
-    const code = err.code ? err.code : httpConstants.RESPONSE_CODES.SERVER_ERROR
-    this.response(res, {}, msg, httpConstants.RESPONSE_STATUS.FAILURE, code)
+    const msg = err.message ? err.message : constants.apiFailureMessage.INTERNAL_SERVER_ERROR
+    const code = err.code ? err.code : constants.httpConstants.RESPONSE_CODES.SERVER_ERROR
+    this.response(res, {}, msg, constants.httpConstants.RESPONSE_STATUS.FAILURE, code)
   }
 
   /**
@@ -65,8 +65,8 @@ export default class Utils {
   }
 
   static returnRejection(message, responseCode) {
-    const msg = message ? message : Constants.INTERNAL_SERVER_ERROR;
-    const code = responseCode ? responseCode : Constants.RESPONSE_CODE.INTERNAL_SERVER_ERROR;
+    const msg = message ? message : constants.apiFailureMessage.INTERNAL_SERVER_ERROR;
+    const code = responseCode ? responseCode : constants.apiFailureMessage.RESPONSE_CODE.INTERNAL_SERVER_ERROR;
     return Promise.reject({message: msg, code: code});
 }
 
@@ -84,6 +84,6 @@ export default class Utils {
    * @constructor
    */
   static lhtLog (functionName, message, payload, developerAlias, logType = 'INFO') {
-    // console.log(`[ ${this.getFormattedDate()} ] ${logType}: ${functionName}: ${message}: ${JSON.stringify(payload)}: Developer : ${developerAlias}`)
+    console.log(`[  ] ${logType}: ${functionName}: ${message}: ${JSON.stringify(payload)}: Developer : ${developerAlias}`)
   }
 }

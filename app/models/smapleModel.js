@@ -37,4 +37,4 @@ sampleSchema.static({
 
 });
 
-export default mongoose.model("sample-table", sampleSchema);
+module.exports = mongoose.model("sample-table", sampleSchema);
