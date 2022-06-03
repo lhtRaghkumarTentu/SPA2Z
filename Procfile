@@ -1,1 +1,1 @@
-Web: node server.js
+Web: node ./node_modules/babel-cli/bin/babel-node.js --presets node8 ./server.js
